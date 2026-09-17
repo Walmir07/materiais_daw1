@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de formulário</title>
+</head>
+<body>
+
+    <body>
+
+        <style>
+            h1 {
+                font-size: 20px;
+            }
+            table {
+                border-collapse: collapse;
+                width: 500px;
+                text-align: center;
+            }
+            th, td {
+                border: 1px solid #000;
+                height: 30px;
+                width: 30%;
+            }
+        </style>
+
+
+        <form onsubmit="event.preventDefault(); 
+        nomeTabela.textContent = nome.value
+        emailTabela.textContent = email.value">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome">
+            <label for="email">E-mail</label>
+            <input type="text" id="email">
+            <button>Enviar</button>
+        </form>
+
+        <br/>
+
+        <table>
+            <thead>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </thead>
+            <tbody>
+                <td id="nomeTabela"></td>
+                <td id="emailTabela"></td>
+            </tbody>
+        </table>
+
+    </body>
+    
+</body>
+</html>
