@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade de formulário</title>
 </head>
+
 <body>
 
     <body>
@@ -14,12 +16,15 @@
                 font-size: 17px;
                 text-align: center;
             }
+
             table {
                 border-collapse: collapse;
                 width: 500px;
                 text-align: center;
             }
-            th, td {
+
+            th,
+            td {
                 border: 1px solid #000;
                 height: 30px;
                 width: 20%;
@@ -55,12 +60,12 @@
                 flex-direction: row;
             }
 
-            .meios{
+            .meios {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
                 padding: 5px;
-                
+
             }
 
             .opcoes {
@@ -68,7 +73,7 @@
                 align-items: center;
             }
 
-            p{
+            p {
                 margin-right: 15px;
                 font-size: 12px;
             }
@@ -93,14 +98,10 @@
                 background-color: rgb(42, 42, 137);
                 color: aliceblue;
             }
-
-
-
-            
         </style>
 
 
-        <form onsubmit="event.preventDefault();
+        <form onsubmit="event.preventDefault(); addLinha()";
 
             nomeTabela.textContent = nome.value
             emailTabela.textContent = email.value
@@ -108,7 +109,7 @@
             turnoTabela.textContent = turno.value
             situacaoTabela.textContent = situacao.value
         
-        ">
+        >
 
             <h1>Cadastro de participante</h1>
 
@@ -118,12 +119,12 @@
                     <label for="nome">Nome</label>
                     <input type="text" id="nome" placeholder="Nome do aluno">
                 </div>
-                
+
                 <div class="meios">
                     <label for="email">E-mail</label>
                     <input type="text" id="email" placeholder="aluno@email.com">
                 </div>
-                
+
             </div>
 
             <div class="secao">
@@ -134,28 +135,32 @@
 
                 <div class="meios">
                     <label for="">Turno</label>
-                    <div class="opcoes" >
-                        <input type="radio" name="escolha" id="turno" value="Manhã"><p>Manhã</p>
-                        <input type="radio" name="escolha" id="turno" value="Tarde"><p>Tarde</p>
-                        <input type="radio" name="escolha" id="turno" value="Noite"><p>Noite</p>
+                    <div class="opcoes">
+                        <input type="radio" name="escolha" id="turno" value="Manhã">
+                        <p>Manhã</p>
+                        <input type="radio" name="escolha" id="turno" value="Tarde">
+                        <p>Tarde</p>
+                        <input type="radio" name="escolha" id="turno" value="Noite">
+                        <p>Noite</p>
                     </div>
-                </div> 
+                </div>
             </div>
 
             <div class="envio">
                 <div class="confirmacao">
-                    <input type="radio" id="situacao" value="Ativo"><p>Confirmo os dados informados</p>
+                    <input type="radio" id="situacao" value="Ativo">
+                    <p>Confirmo os dados informados</p>
                 </div>
-                
+
                 <button>Adicionar à tabela</button>
             </div>
 
-            
+
         </form>
 
-        <br/>
+        <br />
 
-        <table>
+        <table  id="tabela">
             <thead>
                 <th>Nome</th>
                 <th>E-mail</th>
@@ -164,20 +169,43 @@
                 <th>Situação</th>
 
             </thead>
-            <tbody>
-                <td id="nomeTabela"></td>
+            <tbody id="corpo">
+                <!-- <td id="nomeTabela"></td>
                 <td id="emailTabela"></td>
                 <td id="interesseTabela"></td>
                 <td id="turnoTabela"></td>
-                <td id="situacaoTabela"></td>
+                <td id="situacaoTabela"></td> -->
             </tbody>
         </table>
 
-        <br><hr><br>
+        <br>
+        <hr><br>
 
-        
+        <script>
+
+            function addLinha() {
+                var newRow = document.getElementById('tabela').insertRow();
+
+                let newCell = newRow.insertCell();
+                newCell.textContent = document.getElementById("nome").value;
+
+                newCell = newRow.insertCell();
+                newCell.textContent = document.getElementById("email").value;
+
+                newCell = newRow.insertCell();
+                newCell.textContent = document.getElementById("interesse").value;
+
+                newCell = newRow.insertCell();
+                newCell.textContent = document.getElementById("turno").value;
+
+                newCell = newRow.insertCell();
+                newCell.textContent = document.getElementById("situacao").value;
+            }
+
+        </script>
 
     </body>
-    
+
 </body>
+
 </html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de formulário 2</title>
+</head>
+
+<body>
+
+    <body>
+
+        <style>
+            h1 {
+                font-size: 17px;
+                text-align: center;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 500px;
+                text-align: center;
+            }
+
+            th,
+            td {
+                border: 1px solid #000;
+                height: 30px;
+                width: 20%;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                height: 400px;
+                width: 60%;
+                border: #000 1px solid;
+                border-radius: 10px;
+                gap: 15px;
+                padding: 20px;
+                background-color: rgb(227, 236, 245);
+            }
+
+            label {
+                font-size: 15px;
+                font-weight: bold;
+            }
+
+            input {
+                height: 25px;
+                border: 1px solid #000;
+                border-radius: 5px;
+                font-size: 12px;
+                padding-left: 5px;
+            }
+
+            .secao {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .meios {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 5px;
+
+            }
+
+            .opcoes {
+                display: flex;
+                align-items: center;
+            }
+
+            p {
+                margin-right: 15px;
+                font-size: 12px;
+            }
+
+            .envio {
+                display: flex;
+                flex-direction: column;
+                padding-left: 5px;
+            }
+
+            .confirmacao {
+                display: flex;
+                align-items: center;
+            }
+
+            button {
+                width: 150px;
+                height: 30px;
+                font-size: 12px;
+                border: 1px solid #000000;
+                border-radius: 5px;
+                background-color: rgb(42, 42, 137);
+                color: aliceblue;
+            }
+        </style>
+
+
+        <form onsubmit="event.preventDefault();
+
+            nomeTabela.textContent = nome.value
+            emailTabela.textContent = email.value
+            turnoTabela.textContent = turno.value
+            situacaoTabela.textContent = situacao.value
+        
+        ">
+
+            <h1>Inscrição na oficina</h1>
+
+            <div class="meios">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" placeholder="Nome do aluno">
+            </div>
+
+            <div class="meios">
+                <label for="email">Oficina</label>
+                <input type="text" id="email" placeholder="aluno@email.com">
+            </div>
+
+            <label for="">Turno</label>
+            <div class="opcoes">
+                <input type="radio" name="escolha" id="turno" value="Manhã">
+                <p>Manhã</p>
+                <input type="radio" name="escolha" id="turno" value="Tarde">
+                <p>Tarde</p>
+                <input type="radio" name="escolha" id="turno" value="Noite">
+                <p>Noite</p>
+            </div>
+
+            <div class="confirmacao">
+                <input type="radio" id="situacao" value="Ativo">
+                <p>Confirmo os dados informados</p>
+            </div>
+
+            <button>Adicionar</button>
+
+        </form>
+
+        <br />
+
+        <table>
+            <thead>
+                <th>Aluno</th>
+                <th>Oficina</th>
+                <th>Turno</th>
+                <th>Presença</th>
+
+            </thead>
+            <tbody>
+                <td id="nomeTabela"></td>
+                <td id="emailTabela"></td>
+                <td id="turnoTabela"></td>
+                <td id="situacaoTabela"></td>
+            </tbody>
+        </table>
+
+        <br>
+        <hr><br>
+
+
+
+    </body>
+
+</body>
+
+</html>
